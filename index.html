@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Counter</title>
+
+    <style>
+        .bod {
+            border: 2px solid red;
+            background-color: rgb(37, 37, 37);
+            width: 800px;
+            height: 500px;
+            margin: auto;
+        }
+
+        .main {
+            width: 80%;
+            height: 400px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ch {
+            padding-top: 10px;
+            width: 100%;
+            font-size: 40px;
+            color: white;
+            text-align: center;
+        }
+
+        #total {
+            font-size: 300px;
+            color: white;
+
+        }
+
+        #pilus {
+            border-radius: 50%;
+            padding: 20px;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 70px;
+            background-color: transparent;
+            border: 2px solid white;
+            color: aliceblue;
+        }
+
+        #minus {
+            border-radius: 50%;
+            padding: 20px;
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 70px;
+            background-color: transparent;
+            border: 2px solid white;
+            color: aliceblue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="bod">
+        <div class="ch">
+            <i class='bx bxs-coffee-togo' id="ch">
+
+            </i>
+        </div>
+        <div class="main">
+            <button id="minus">-</button>
+            <p id="total">0</p>
+            <button id="pilus">+</button>
+
+        </div>
+
+    </div>
+    <script>
+        let minus = document.getElementById('minus');
+        let pilus = document.getElementById('pilus');
+        let total = document.getElementById('total');
+        let ch = document.getElementById('ch');
+
+
+        let data = 0;
+
+        pilus.onclick = function () {
+            if (data > -2) {
+                minus.style.display = "block"
+            }
+            total.innerHTML = ++data;
+        }
+
+
+        minus.onclick = function() {
+            if (data == 1) {
+                minus.style.display = "none"
+            }
+        
+                total.innerHTML = --data;
+            
+        }
+
+      
+
+        ch.onclick = function pilusFc() {
+            total.innerHTML = 0;
+            minus.style.display = "block"
+
+        }
+
+
+    </script>
+</body>
+
+</html>
